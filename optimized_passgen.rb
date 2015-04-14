@@ -56,15 +56,15 @@ def passgen()
    # Number of possible consonants
    length_of_consonant = consonant.size(); 
 
-   # Temporary number of chars in password
-   tmp_len = passlen - passlen % 2; # Round passlen down to closest even number.
-   tmp_len = tmp_len / 2; # Make this half size
+   # We declear this number to use when creating the password.
+   tmp_len = passlen - passlen % 2; # First we round passlen down to closest even number.
+   tmp_len = tmp_len / 2; # Then we divide by two.
 
    # Dummie variables here:
    n = 0; # Counter for current length of password
 
-   # Add 2 and 2 letters untill password reach
-   # as close to password length as possible
+   # When we create password we add two and two letters untill we get 
+   # as close to password length as possible.
    while n < tmp_len do 
 	# Get random int number between 0 and (length of consonant array -1)
 	i = Random.rand(length_of_consonant);
@@ -82,7 +82,7 @@ def passgen()
 	n = n+1;
    end
 
-   # If odd number of letters in password, add another consonant
+   # If odd number of letters in password, add another consonant. As such we reach the desired password length.
    if passlen % 2 == 1
 	i = Random.rand(length_of_consonant);
 	pw = pw + consonant[i];	
